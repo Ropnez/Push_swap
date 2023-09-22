@@ -127,7 +127,7 @@ int main(int ac, char **av)
         int j = 1;
         int i = 0;
         t_stack *stack_a = NULL;
-        //t_stack *stack_b = NULL;
+        t_stack *stack_b = NULL;
         char **str;
         if (ft_strlen(av[1]) == 0)
             ft_error(stack_a);
@@ -171,12 +171,26 @@ int main(int ac, char **av)
             }
             j++;
         }
+        sa(&stack_a);
+        pb(&stack_a, &stack_b);
+        pb(&stack_a, &stack_b);
+        pb(&stack_a, &stack_b);
         while (stack_a)
         {
-            printf("%d\n", stack_a->data);
-            stack_a = stack_a->next;
+            if (!stack_b){
+                printf("%d \n", stack_a->data);
+                stack_a = stack_a->next;
+            }
+            else{
+                printf("%d ", stack_a->data);
+                stack_a = stack_a->next;
+                if (stack_b){
+                    printf("%d\n", stack_b->data);
+                    stack_b = stack_b->next;
+                }
+            }
         }
-        // free_stack(stack_b);
-        //free_stack(stack_a);
+        free_stack(stack_a);
+        free_stack(stack_b);
     }
 }

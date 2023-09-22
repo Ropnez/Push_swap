@@ -39,19 +39,96 @@ void pa(t_stack **stack_a, t_stack **stack_b){
 }
 
 void pb(t_stack **stack_a, t_stack **stack_b){
-    t_stack *temp;
+    
+    if (stacksize(*stack_a) > 1){
+        t_stack *temp;
 
-    if (!(*stack_a))
-        return ;
-    temp = (*stack_a)->next;
-    (*stack_a)->next = (*stack_b);
-    (*stack_b) = (*stack_a);
-    (*stack_a) = temp;
+        temp = (*stack_a)->next;
+        (*stack_a)->next = (*stack_b);
+        (*stack_b) = (*stack_a);
+        (*stack_a) = temp;
+    }
 
 }
 
 void ra(t_stack **stack_a){
-    if (!(*stack_a))
+
+    if (stacksize(*stack_a) < 2)
         return ;
+    t_stack *temp;
+    t_stack *last;
+
+    temp = (*stack_a);
+    last = (*stack_a);
+    while(last->next)
+        last = last->next;
+    last->next = temp;
+    temp = temp ->next;
+    last ->next->next = NULL;
+    (*stack_a) = temp;
     
+}
+
+void rb(t_stack **stack_b){
+
+    if (stacksize(*stack_b) < 2)
+        return ;
+    t_stack *temp;
+    t_stack *last;
+
+    temp = (*stack_b);
+    last = (*stack_b);
+    while(last->next)
+        last = last->next;
+    last->next = temp;
+    temp = temp ->next;
+    last ->next->next = NULL;
+    (*stack_b) = temp;
+    
+}
+
+void rr (t_stack **stack_a, t_stack **stack_b){
+    ra(stack_a);
+    rb(stack_b);
+}
+
+void rra(t_stack **stack_a){
+
+    if (stacksize(*stack_a) < 2)
+        return ;
+    t_stack *temp;
+    t_stack *last;
+
+    temp = (*stack_a);
+    last = (*stack_a);
+    while(last->next)
+        last = last->next;
+    while(temp->next->next != NULL)
+        temp = temp->next;
+    last->next = (*stack_a);
+    temp->next = NULL;
+    (*stack_a) = last;   
+}
+
+void rrb(t_stack **stack_b){
+
+    if (stacksize(*stack_b) < 2)
+        return ;
+    t_stack *temp;
+    t_stack *last;
+
+    temp = (*stack_b);
+    last = (*stack_b);
+    while(last->next)
+        last = last->next;
+    while(temp->next->next != NULL)
+        temp = temp->next;
+    last->next = (*stack_b);
+    temp->next = NULL;
+    (*stack_b) = last;   
+}
+
+void rrr (t_stack **stack_a, t_stack **stack_b){
+    rra(stack_a);
+    rrb(stack_b);
 }
