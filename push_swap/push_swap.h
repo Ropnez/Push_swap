@@ -5,8 +5,8 @@
 
 typedef struct s_stack
 {
-    int data;
-    struct s_stack *next;
+	int	data;
+	struct	s_stack *next;
 }   t_stack;
 
 void sa(t_stack **stack_a);
@@ -25,4 +25,13 @@ void pop(t_stack **stack);
 void free_stack(t_stack *stack);
 void ft_error(t_stack *stack);
 int stacksize(t_stack *stack);
+void push_init(t_stack **stack, int data);
+int control(char *str);
+void free_tab (char **str);
+void ft_error(t_stack *stack);
+void ft_push_str(t_stack **stack, char *str);
+void ft_control(t_stack *stack_a, char **av, int j);
+void	ft_is_one(t_stack **stack_a, t_stack **stack_b);
+int	check_sort(t_stack *stack);
+int	check(t_stack *stack, int data);
 #endif

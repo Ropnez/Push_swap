@@ -1,196 +1,99 @@
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
 #include "push_swap.h"
+#include <stdio.h>
 
-int stacksize(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
-    int i = 0;
-    while (stack)
-    {
-        i++;
-        stack = stack->next;
-    }
-    return i;
+	while (stack)
+	{
+		printf("%d\n", stack->data);
+		stack = stack->next;
+	}
 }
 
-void ft_error(t_stack *stack){
-    write(2, "error\n", 6);
-    t_stack *tmp;
-
-    while (stack)
-    {
-        tmp = stack;
-        stack = (stack)->next;
-        free(tmp);
-    }
-    exit(0);
-}
-
-void free_tab (char **str){
-    int i = 0;
-    while (str[i]){
-        free (str[i]);
-        i++;
-    }
-    free(str);
-}
-
-void free_stack(t_stack *stack)
+void	ft_push_str(t_stack **stack, char *str)
 {
-    t_stack *tmp;
+	char	**tab;
+	int		i;
 
-    while (stack)
-    {
-        tmp = stack;
-        stack = (stack)->next;
-        free(tmp);
-    }
+	i = 0;
+	tab = ft_split(str, ' ');
+	if (!tab)
+		ft_error(*stack);
+	while (tab[i])
+	{
+		if (check(*stack, ft_atoi(tab[i])) == 0)
+		{
+			free_tab(tab);
+			ft_error(*stack);
+		}
+		push_init(stack, ft_atoi(tab[i]));
+		i++;
+	}
+	free_tab(tab);
 }
 
-void pop(t_stack **stack){
-    
-    t_stack *temp;
-    if (!(*stack))
-        return ;
-    temp = *stack;
-    *stack = (*stack)->next;
-    free(temp);
-}
-
-void push(t_stack **stack, int data){
-    t_stack *new;
-
-    if (!(*stack))
-    {
-        *stack = malloc(sizeof(t_stack));
-        if (!(*stack))
-            ft_error(*stack);
-        (*stack)->data = data;
-        (*stack)->next = NULL;
-        return ;
-    }
-    t_stack *tmp = *stack;
-    while (tmp->next)
-        tmp = tmp->next;
-    new = malloc(sizeof(t_stack));
-    if (!new)
-        ft_error(*stack);
-    new->data = data;
-    new->next = NULL;
-    tmp->next = new;
-}
-
-int check(t_stack *stack , int data)
+void	ft_push_normal(t_stack **stack, char *str)
 {
-    int i = 0;
-    int j = 0;
-    int size = stacksize(stack);
-    int *arr = malloc(sizeof(int) * size);
-    while (stack)
-    {
-        arr[i] = stack->data;
-        stack = stack->next;
-        i++;
-    }
-    while (j < size)
-    {
-        if (arr[j] == data){
-            free(arr);
-            return 0;}
-        j++;
-    }
-    free(arr);
-    return 1;
+	if (check(*stack, ft_atoi(str)) == 0)
+		ft_error(*stack);
+	push_init(stack, ft_atoi(str));
 }
 
-int control(char *str){
-    int i = 0;
-    while (str[i])
-    {
-        if (str[i] >= '0' && str[i] <= '9')
-            i++;
-        else if (str[i] == '-' && str[i + 1] >= '0' && str[i + 1] <= '9')
-            i++;
-        else if (str[i] == '+' && str[i + 1] >= '0' && str[i + 1] <= '9')
-            i++;
-        else if (str[i] == ' ')
-            i++;
-        else
-            ft_error(NULL);
-    }
-    return 1;
-}
-int main(int ac, char **av)
+void	ft_push_loop(t_stack **stack_a, char **av, int j, int ac)
 {
-    if (ac > 1){
-        int j = 1;
-        int i = 0;
-        t_stack *stack_a = NULL;
-        t_stack *stack_b = NULL;
-        char **str;
-        if (ft_strlen(av[1]) == 0)
-            ft_error(stack_a);
-        while (av[j]){
-            control(av[j]);
-            j++;
-        }
-        j = 1;
-        while (av[j] && ac > 1)
-        {
-            while (av[j]){
-                if (av[j][i] != ' ')
-                    i++;
-                else{
-                    i = 0;
-                    str = ft_split(av[j], ' ');
-                    if (!str)
-                        ft_error(stack_a);
-                    while (str[i])
-                    {
-                        if (check(stack_a, ft_atoi(str[i])) == 0)
-                        {
-                            free_tab(str);
-                            ft_error(stack_a);
-                        }
-                        push(&stack_a, ft_atoi(str[i]));
-                        i++;
-                    }
-                    free_tab(str);
-                    ac--;
-                    break;
-                }
-                if (av[j][i] == '\0'){
-                    if (check(stack_a, ft_atoi(av[j])) == 0)
-                        ft_error(stack_a);
-                    push(&stack_a, ft_atoi(av[j]));
-                    j++;
-                    ac--;
-                    i = 0;
-                }
-            }
-            j++;
-        }
-        sa(&stack_a);
-        pb(&stack_a, &stack_b);
-        pb(&stack_a, &stack_b);
-        pb(&stack_a, &stack_b);
-        while (stack_a)
-        {
-            if (!stack_b){
-                printf("%d \n", stack_a->data);
-                stack_a = stack_a->next;
-            }
-            else{
-                printf("%d ", stack_a->data);
-                stack_a = stack_a->next;
-                if (stack_b){
-                    printf("%d\n", stack_b->data);
-                    stack_b = stack_b->next;
-                }
-            }
-        }
-        free_stack(stack_a);
-        free_stack(stack_b);
-    }
+	int	i;
+
+	i = 0;
+	while (av[j] && ac > 1)
+	{
+		while (av[j])
+		{
+			if (av[j][i] != ' ')
+				i++;
+			else
+			{
+				ft_push_str(stack_a, av[j]);
+				ac--;
+				break ;
+			}
+			if (av[j][i] == '\0')
+			{
+				ft_push_normal(stack_a, av[j]);
+				j++;
+				ac--;
+				i = 0;
+			}
+		}
+		j++;
+	}
 }
+
+int	main(int ac, char **av)
+{
+	int		j;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	if (ac > 1)
+	{
+		stack_a = NULL;
+		stack_b = NULL;
+		j = 1;
+		ft_control(stack_a, av, j);
+		ft_push_loop(&stack_a, av, j, ac);
+		ft_is_one(&stack_a, &stack_b);
+		if (check_sort(stack_a) == 1)
+		{
+			free_stack(stack_a);
+			free_stack(stack_b);
+			exit(0);
+		}
+		print_stack(stack_a);
+		free_stack(stack_a);
+		free_stack(stack_b);
+	}
+	return (0);
+}
+
+//29 dolap

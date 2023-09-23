@@ -4,7 +4,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC =	push_swap.c \
-		rules.c
+		rules_1.c \
+		rules_2.c \
+		rules_3.c \
+		utils_1.c \
+		utils_2.c \
+		utils_3.c 
 
 
 
