@@ -31,14 +31,38 @@ void	ft_control(t_stack *stack_a, char **av, int j)
 	}
 }
 
+void	space_ctrl(char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+			j++;
+		i++;
+	}
+	if (j == 0)
+		ft_error(NULL);
+}
+
 int	control(char *str)
 {
 	int	i;
 
 	i = 0;
+	space_ctrl(str);
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (str[i] >= '0' && str[i] <= '9'
+			&& str[i + 1] == '-' && str[i + 2] >= '0' && str[i + 2] <= '9')
+			ft_error(NULL);
+		else if (str[i] >= '0' && str[i] <= '9'
+			&& str[i + 1] == '+' && str[i + 2] >= '0' && str[i + 2] <= '9')
+			ft_error(NULL);
+		else if (str[i] >= '0' && str[i] <= '9')
 			i++;
 		else if (str[i] == '-' && str[i + 1] >= '0' && str[i + 1] <= '9')
 			i++;
@@ -51,6 +75,7 @@ int	control(char *str)
 	}
 	return (1);
 }
+
 
 int	check(t_stack *stack, int data)
 {

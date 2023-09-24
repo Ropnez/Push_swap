@@ -9,7 +9,10 @@ SRC =	push_swap.c \
 		rules_3.c \
 		utils_1.c \
 		utils_2.c \
-		utils_3.c 
+		utils_3.c \
+		sort_1.c \
+		sort_2.c \
+		sort_3.c 
 
 
 

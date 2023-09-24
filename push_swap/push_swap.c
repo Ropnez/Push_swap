@@ -6,7 +6,7 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		printf("%d\n", stack->data);
+		printf("%d ", stack->data);
 		stack = stack->next;
 	}
 }
@@ -89,11 +89,10 @@ int	main(int ac, char **av)
 			free_stack(stack_b);
 			exit(0);
 		}
-		print_stack(stack_a);
+		ft_sort(&stack_a, &stack_b, ft_stacksize(stack_a));
+		//print_stack(stack_a);
 		free_stack(stack_a);
 		free_stack(stack_b);
 	}
 	return (0);
 }
-
-//29 dolap

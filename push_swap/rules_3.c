@@ -17,30 +17,24 @@ void	rotate_reverse(t_stack **stack)
 	(*stack) = last;
 }
 
-void	rra(t_stack **stack_a)
+void	rra(t_stack **stack_a, int print)
 {
-	if (stacksize(*stack_a) > 1)
-	{
-		rotate_reverse(stack_a);
+	rotate_reverse(stack_a);
+	if (print == 1)
 		write(1, "rra\n", 4);
-	}
 }
 
-void	rrb(t_stack **stack_b)
+void	rrb(t_stack **stack_b, int print)
 {
-	if (stacksize(*stack_b) > 1)
-	{
-		rotate_reverse(stack_b);
+	rotate_reverse(stack_b);
+	if (print == 1)
 		write(1, "rrb\n", 4);
-	}
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, int print)
 {
-	if (stacksize(*stack_a) && stacksize(*stack_b))
-	{
-		rotate_reverse(stack_a);
-		rotate_reverse(stack_b);
+	rotate_reverse(stack_a);
+	rotate_reverse(stack_b);
+	if (print == 1)
 		write(1, "rrr\n", 4);
-	}
 }
