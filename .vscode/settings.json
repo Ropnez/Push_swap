@@ -1,7 +1,6 @@
 {
     "files.associations": {
-        "push_swap.h": "c",
-        "sstream": "c",
-        "ostream": "c"
+        "__locale": "c",
+        "iterator": "c"
     }
 }
