@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_1.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/21 22:58:29 by buryilma          #+#    #+#             */
+/*   Updated: 2023/09/25 19:08:29 by buryilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+#include <stdlib.h>
 
 size_t	ft_stacksize(t_stack *stack)
 {
@@ -101,7 +114,7 @@ void	sort_three_first(t_stack **stack)
 	else if ((*stack)->data > (*stack)->next->data
 		&& (*stack)->data < (*stack)->next->next->data)
 		sa(stack, 1);
-	else if ((*stack)->data < (*stack)->next->data 
+	else if ((*stack)->data < (*stack)->next->data
 		&& (*stack)->data > (*stack)->next->next->data)
 		rra(stack, 1);
 	else if ((*stack)->data > (*stack)->next->data

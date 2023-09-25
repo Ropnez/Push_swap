@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mumutlu <mumutlu@student.42.fr>            +#+  +:+       +#+         #
+#    By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/03 16:18:56 by mumutlu           #+#    #+#              #
-#    Updated: 2023/09/05 20:45:08 by mumutlu          ###   ########.fr        #
+#    Created: 2023/09/25 19:10:58 by buryilma          #+#    #+#              #
+#    Updated: 2023/09/25 19:15:33 by buryilma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

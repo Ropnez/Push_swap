@@ -1,73 +1,17 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/13 22:58:29 by buryilma          #+#    #+#             */
+/*   Updated: 2023/09/25 19:06:45 by buryilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdio.h>
-
-void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d ", stack->data);
-		stack = stack->next;
-	}
-}
-
-void	ft_push_str(t_stack **stack, char *str)
-{
-	char	**tab;
-	int		i;
-
-	i = 0;
-	tab = ft_split(str, ' ');
-	if (!tab)
-		ft_error(*stack);
-	while (tab[i])
-	{
-		if (check(*stack, ft_atoi(tab[i])) == 0)
-		{
-			free_tab(tab);
-			ft_error(*stack);
-		}
-		push_init(stack, ft_atoi(tab[i]));
-		i++;
-	}
-	free_tab(tab);
-}
-
-void	ft_push_normal(t_stack **stack, char *str)
-{
-	if (check(*stack, ft_atoi(str)) == 0)
-		ft_error(*stack);
-	push_init(stack, ft_atoi(str));
-}
-
-void	ft_push_loop(t_stack **stack_a, char **av, int j, int ac)
-{
-	int	i;
-
-	i = 0;
-	while (av[j] && ac > 1)
-	{
-		while (av[j])
-		{
-			if (av[j][i] != ' ')
-				i++;
-			else
-			{
-				ft_push_str(stack_a, av[j]);
-				ac--;
-				break ;
-			}
-			if (av[j][i] == '\0')
-			{
-				ft_push_normal(stack_a, av[j]);
-				j++;
-				ac--;
-				i = 0;
-			}
-		}
-		j++;
-	}
-}
+#include <stdlib.h>
 
 int	main(int ac, char **av)
 {
@@ -90,7 +34,6 @@ int	main(int ac, char **av)
 			exit(0);
 		}
 		ft_sort(&stack_a, &stack_b, ft_stacksize(stack_a));
-		//print_stack(stack_a);
 		free_stack(stack_a);
 		free_stack(stack_b);
 	}

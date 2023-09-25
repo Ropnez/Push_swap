@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mumutlu <mumutlu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 19:23:02 by mumutlu           #+#    #+#             */
-/*   Updated: 2023/09/05 20:34:09 by mumutlu          ###   ########.fr       */
+/*   Created: 2023/09/25 19:10:58 by buryilma          #+#    #+#             */
+/*   Updated: 2023/09/25 19:15:19 by buryilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/15 22:58:29 by buryilma          #+#    #+#             */
+/*   Updated: 2023/09/25 19:08:08 by buryilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdlib.h>
+#include "./libft/libft.h"
 #include <unistd.h>
 
 void	ft_error(t_stack *stack)
@@ -75,7 +87,6 @@ int	control(char *str)
 	}
 	return (1);
 }
-
 
 int	check(t_stack *stack, int data)
 {
