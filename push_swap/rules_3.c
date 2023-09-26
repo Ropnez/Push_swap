@@ -6,7 +6,7 @@
 /*   By: buryilma <buryilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 22:58:29 by buryilma          #+#    #+#             */
-/*   Updated: 2023/09/25 18:58:11 by buryilma         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:03:48 by buryilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rrb(t_stack **stack_b, int print)
 
 void	rrr(t_stack **stack_a, t_stack **stack_b, int print)
 {
-	if (ft_stacksize(*stack_a) && ft_stacksize(*stack_b))
+	if (ft_stacksize(*stack_a) > 1 && ft_stacksize(*stack_b) > 1)
 	{
 		rotate_reverse(stack_a);
 		rotate_reverse(stack_b);
