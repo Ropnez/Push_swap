@@ -1,47 +1,72 @@
 # Push_swap Projesi
 
-Bu proje, sıralı olmayan bir dizi sayıyı sıralı hale getirmek için iki farklı yığın (stack) veri yapısı kullanarak çözümlemeyi amaçlamaktadır. Push_swap, 42 Network programlama okulu için bir proje olarak geliştirilmiştir.
+Bu proje, Push Swap algoritması kullanarak bir dizi tam sayıyı sıralamak için C dilinde yazılmıştır. Push Swap, bir dizi üzerinde iki yığın (stack) kullanarak sıralama yapar. Bu proje, dizi elemanlarını minimum hamle sayısında sıralamayı hedefler.
+İçindekiler
 
-## Başlangıç
+    Proje Hakkında
+    Kullanım Kılavuzu
+    Algoritma Açıklaması
+    Kurulum
+    Katkıda Bulunma
+    Lisans
 
-Bu talimatlar, projenin yerel makinenizde nasıl çalıştırılacağını ve kullanılacağını açıklar. Başlamadan önce, projeyi yerel makinenizde çalıştırmak için bir C derleyicisine (örneğin, GCC) ihtiyacınız olacaktır.
+1. Proje Hakkında
 
-1. Projeyi klonlayın:
+Push Swap projesi, 42 Network okulunun bir parçası olarak verilen bir görevdir. Bu görevde, bir dizi tam sayıyı sıralamak için iki yığın (stack) kullanarak mümkün olan en az hamle ile sıralamayı gerçekleştirmeniz gerekmektedir.
+2. Kullanım Kılavuzu
 
-```bash
-git clone https://github.com/sizin-github-hesabınız/push_swap.git
-cd push_swap
+Proje kullanımı için aşağıdaki adımları izleyebilirsiniz:
 
-Push_swap'i derleyin
-make
+    git clone https://github.com/your_username/push_swap.git
+    cd push_swap
+    make
+    ./push_swap 4 2 1 3
 
-Kullanım
+3. Algoritma Açıklaması
 
-Proje, iki ayrı komut satırı programı içerir: push_swap ve checker.
+Bu projede kullanılan algoritma, çeşitli hamlelerle diziyi sıralamayı hedefler. Algoritma hakkında daha fazla bilgi için kodu ve belgeleri inceleyebilirsiniz.
+4. Kurulum
 
-push_swap
+Proje kodunu yerel bir dizine klonlayabilirsiniz. Ayrıca, proje bağımlılıklarını kurmak için make komutunu kullanabilirsiniz.
+5. Katkıda Bulunma
 
-push_swap programı, verilen bir dizi sayıyı sıralamak için gereken hareketleri hesaplayan ana programdır. Aşağıdaki komutu kullanarak çalıştırabilirsiniz:
+Eğer projeye katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) göndermeden önce mevcut katkı rehberimizi okuyun.
+6. Lisans
 
-./push_swap [sayılar]
-./push_swap 3 2 1
+Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
 
-checker
 
-checker programı, push_swap tarafından üretilen hareketleri doğrulamak için kullanılır. push_swap tarafından hesaplanan hareketleri kontrol etmek için aşağıdaki komutu kullanabilirsiniz:
+This project is written in C and implements the Push Swap algorithm to sort an array of integers. Push Swap sorts the array using two stacks and aims to do so in the minimum number of moves.
+Table of Contents
 
-./push_swap [sayılar] | ./checker [sayılar]
+    About the Project
+    Usage Guide
+    Algorithm Description
+    Installation
+    Contributing
+    License
 
-Katkıda Bulunma
+1. About the Project
 
-Bu proje, açık kaynaklı bir projedir ve katkıda bulunmaktan çekinmeyin. Her türlü katkı ve önerileri memnuniyetle karşılıyoruz. Katkıda bulunmak isterseniz, lütfen aşağıdaki adımları izleyin:
+The Push Swap project is part of the 42 Network school curriculum. In this task, you are required to sort an array of integers using two stacks with the fewest possible moves.
+2. Usage Guide
 
-    Bu projeyi fork edin.
-    Yeni bir özellik eklemek veya hata düzeltmek için bir dal (branch) oluşturun.
-    Değişikliklerinizi yapın ve commit'leyin.
-    Yaptığınız değişiklikleri fork ettiğiniz orijinal depoya (upstream repository) gönderin.
-    Bir pull isteği (pull request) oluşturun ve değişikliklerinizi değerlendirmemizi bekleyin.
+To use the project, follow these steps:
 
-Lisans
+    git clone https://github.com/your_username/push_swap.git
+    cd push_swap
+    make
+    ./push_swap 4 2 1 3
 
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına başvurun.
+3. Algorithm Description
+
+The algorithm used in this project aims to sort the array with various moves. You can explore the code and documentation for more information about the algorithm.
+4. Installation
+
+You can clone the project code into a local directory. You can also use the make command to install project dependencies.
+5. Contributing
+
+If you would like to contribute to the project, please read our contribution guidelines before submitting a pull request.
+6. License
+
+This project is licensed under the MIT License. For more information, see the LICENSE file.
