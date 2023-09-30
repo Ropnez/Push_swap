@@ -25,12 +25,15 @@ Proje kullanımı için aşağıdaki adımları izleyebilirsiniz:
 3. Algoritma Açıklaması
 
 Bu projede kullanılan algoritma, çeşitli hamlelerle diziyi sıralamayı hedefler. Algoritma hakkında daha fazla bilgi için kodu ve belgeleri inceleyebilirsiniz.
+
 4. Kurulum
 
 Proje kodunu yerel bir dizine klonlayabilirsiniz. Ayrıca, proje bağımlılıklarını kurmak için make komutunu kullanabilirsiniz.
+
 5. Katkıda Bulunma
 
 Eğer projeye katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) göndermeden önce mevcut katkı rehberimizi okuyun.
+
 6. Lisans
 
 Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
