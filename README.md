@@ -18,7 +18,7 @@ Bu proje, Push Swap algoritması kullanarak bir dizi tam sayıyı sıralamak iç
 
 Proje kullanımı için aşağıdaki adımları izleyebilirsiniz:
 
-    git clone https://github.com/your_username/push_swap.git
+    git clone https://github.com/ropnez/push_swap.git
     cd push_swap
     make
     ./push_swap 4 2 1 3
@@ -57,7 +57,7 @@ The Push Swap project is part of the 42 Network school curriculum. In this task,
 
 To use the project, follow these steps:
 
-    git clone https://github.com/your_username/push_swap.git
+    git clone https://github.com/ropnez/push_swap.git
     cd push_swap
     make
     ./push_swap 4 2 1 3
