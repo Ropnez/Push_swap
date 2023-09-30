@@ -12,8 +12,9 @@ Bu proje, Push Swap algoritması kullanarak bir dizi tam sayıyı sıralamak iç
 
 1. Proje Hakkında
 
-Push Swap projesi, 42 Network okulunun bir parçası olarak verilen bir görevdir. Bu görevde, bir dizi tam sayıyı sıralamak için iki yığın (stack) kullanarak mümkün olan en az hamle ile sıralamayı gerçekleştirmeniz gerekmektedir.
-2. Kullanım Kılavuzu
+    Push Swap projesi, 42 Network okulunun bir parçası olarak verilen bir görevdir. Bu görevde, bir dizi tam sayıyı sıralamak için iki yığın (stack) kullanarak mümkün olan en az hamle ile sıralamayı gerçekleştirmeniz gerekmektedir.
+
+3. Kullanım Kılavuzu
 
 Proje kullanımı için aşağıdaki adımları izleyebilirsiniz:
 
@@ -24,19 +25,19 @@ Proje kullanımı için aşağıdaki adımları izleyebilirsiniz:
 
 3. Algoritma Açıklaması
 
-Bu projede kullanılan algoritma, çeşitli hamlelerle diziyi sıralamayı hedefler. Algoritma hakkında daha fazla bilgi için kodu ve belgeleri inceleyebilirsiniz.
+    Bu projede kullanılan algoritma, çeşitli hamlelerle diziyi sıralamayı hedefler. Algoritma hakkında daha fazla bilgi için kodu ve belgeleri inceleyebilirsiniz.
 
 4. Kurulum
-
-Proje kodunu yerel bir dizine klonlayabilirsiniz. Ayrıca, proje bağımlılıklarını kurmak için make komutunu kullanabilirsiniz.
+    
+    Proje kodunu yerel bir dizine klonlayabilirsiniz. Ayrıca, proje bağımlılıklarını kurmak için make komutunu kullanabilirsiniz.
 
 5. Katkıda Bulunma
 
-Eğer projeye katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) göndermeden önce mevcut katkı rehberimizi okuyun.
+    Eğer projeye katkıda bulunmak isterseniz, lütfen bir çekme isteği (pull request) göndermeden önce mevcut katkı rehberimizi okuyun.
 
-6. Lisans
+7. Lisans
 
-Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
+    Bu proje, MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
 
 
 This project is written in C and implements the Push Swap algorithm to sort an array of integers. Push Swap sorts the array using two stacks and aims to do so in the minimum number of moves.
